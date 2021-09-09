@@ -1,0 +1,27 @@
+1. tb_user:
+CREATE TABLE tb_user (
+    id int(255) AUTO_INCREMENT PRIMARY KEY,
+    username varchar(1000),
+    email varchar(1000),
+    password varchar(1000));
+
+2. tb_collections
+CREATE TABLE tb_collections (
+    id int(255) AUTO_INCREMENT PRIMARY KEY,
+    category_name varchar(50),
+    user_id int,
+    FOREIGN KEY (user_id) REFERENCES tb_user (id)
+);
+
+3. tb_task
+CREATE TABLE tb_task (
+    id int(255) AUTO_INCREMENT PRIMARY KEY,
+    name_task varchar(100),
+    is_done varchar(10),
+    collections_id int,
+    FOREIGN KEY (collections_id) REFERENCES tb_task (id)
+    );
+
+
+
+//--------------------------------------------------------------------------------------------------------//
